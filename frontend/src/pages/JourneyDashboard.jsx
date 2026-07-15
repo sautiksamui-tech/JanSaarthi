@@ -13,7 +13,9 @@ const getApiUrl = (path) => {
   if (configured) {
     return `${configured}${path}`;
   }
-  const base = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' ? '' : 'http://localhost:5000';
+  const base = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' 
+    ? '' 
+    : 'https://jansaarthi.onrender.com';
   return `${base}${path}`;
 };
 
