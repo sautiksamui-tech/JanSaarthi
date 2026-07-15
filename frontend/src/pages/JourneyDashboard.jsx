@@ -9,6 +9,10 @@ import Button from '../components/common/Button';
 import { Timeline, TimelineItem } from '../components/common/Timeline';
 
 const getApiUrl = (path) => {
+  const configured = localStorage.getItem('backendApiUrl');
+  if (configured) {
+    return `${configured}${path}`;
+  }
   const base = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' ? '' : 'http://localhost:5000';
   return `${base}${path}`;
 };
@@ -354,7 +358,7 @@ const JourneyDashboard = () => {
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -10 }}
                 transition={{ duration: 0.2 }}
-                className="sticky top-24 animate-fade-in"
+                className="lg:sticky lg:top-24 animate-fade-in"
               >
                 <Card variant="default" className="border-zinc-200 dark:border-zinc-800">
                   <CardHeader className="bg-zinc-50/50 dark:bg-zinc-900/10">

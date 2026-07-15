@@ -21,6 +21,10 @@ const LandingPage = () => {
   ];
 
   const getApiUrl = (path) => {
+    const configured = localStorage.getItem('backendApiUrl');
+    if (configured) {
+      return `${configured}${path}`;
+    }
     const base = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' ? '' : 'http://localhost:5000';
     return `${base}${path}`;
   };
