@@ -1,0 +1,115 @@
+{
+  "domain": "business_startup",
+  "goal_keywords": [
+    "bakery",
+    "bake house",
+    "cake shop",
+    "bread shop"
+  ],
+  "steps": [
+    {
+      "id": "biz_registration",
+      "title": "Business Entity Registration",
+      "description": "Register your bakery as a legal business entity (e.g., Sole Proprietorship, Partnership, or One Person Company) and obtain a Business PAN.",
+      "dependencies": [],
+      "documents": [
+        "Aadhaar Card of Owner",
+        "PAN Card of Owner",
+        "Proof of Business Address (Rent Agreement or Utility Bill)"
+      ],
+      "authority": "Ministry of Corporate Affairs / Local Registrar office",
+      "estimated_time": 7,
+      "status": "LOCKED"
+    },
+    {
+      "id": "bank_account",
+      "title": "Open Business Current Bank Account",
+      "description": "Set up a dedicated corporate current account under the registered business name for all bakery transactions.",
+      "dependencies": [
+        "biz_registration"
+      ],
+      "documents": [
+        "Business Registration Certificate",
+        "Business PAN Card",
+        "GST Registration (if applicable)",
+        "ID & Address Proof of Proprietor"
+      ],
+      "authority": "Any Scheduled Commercial Bank",
+      "estimated_time": 3,
+      "status": "LOCKED"
+    },
+    {
+      "id": "fire_noc",
+      "title": "Fire Department No-Objection Certificate (NOC)",
+      "description": "Obtain clearances from the local fire safety department stating the bakery premises comply with fire safety codes.",
+      "dependencies": [
+        "biz_registration"
+      ],
+      "documents": [
+        "Building Layout Plan showing exits",
+        "Certificate of Structural Stability",
+        "NOC from the landlord (if leased)",
+        "Photographs of installed fire extinguishers"
+      ],
+      "authority": "State Fire and Emergency Services",
+      "estimated_time": 15,
+      "status": "LOCKED"
+    },
+    {
+      "id": "gst_registration",
+      "title": "GST Registration Certificate",
+      "description": "Register for Goods and Services Tax (GST) to legally collect tax and claim input tax credits.",
+      "dependencies": [
+        "bank_account"
+      ],
+      "documents": [
+        "PAN Card of Business",
+        "Partnership Deed / Incorporation Certificate",
+        "Address Proof of Business",
+        "Cancelled Cheque / Bank Statement Header"
+      ],
+      "authority": "GSTN / Central Board of Indirect Taxes and Customs",
+      "estimated_time": 5,
+      "status": "LOCKED"
+    },
+    {
+      "id": "fssai_license",
+      "title": "FSSAI Food Business Registration/License",
+      "description": "Register with the Food Safety and Standards Authority of India (FSSAI) to ensure food safety and quality standards compliance.",
+      "dependencies": [
+        "bank_account",
+        "fire_noc"
+      ],
+      "documents": [
+        "Photo of Proprietor/Partners",
+        "Identity Proof (Aadhaar or Voter ID)",
+        "Proof of Possession of Premises (Rent Deed / Tax Bill)",
+        "List of Food Category to be prepared",
+        "Water Analysis Report from certified lab",
+        "Food Safety Management System (FSMS) Plan outline"
+      ],
+      "authority": "Food Safety and Standards Authority of India (FSSAI)",
+      "estimated_time": 20,
+      "status": "LOCKED"
+    },
+    {
+      "id": "trade_license",
+      "title": "Municipal Health and Trade License",
+      "description": "Acquire the trade license from the local municipal corporation to operate a food production and retail business in the area.",
+      "dependencies": [
+        "fssai_license",
+        "fire_noc"
+      ],
+      "documents": [
+        "Copy of FSSAI License",
+        "Copy of Fire NOC",
+        "Proof of Ownership/Tenancy",
+        "Layout Plan of the Bakery setup",
+        "Medical Fitness Certificates for food handlers"
+      ],
+      "authority": "Local Municipal Corporation / Health Department",
+      "estimated_time": 15,
+      "status": "LOCKED"
+    }
+  ]
+}

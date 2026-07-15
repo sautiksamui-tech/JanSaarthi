@@ -1,0 +1,23 @@
+# Node dependencies
+**/node_modules/
+**/dist/
+
+# Python environment & cache
+**/.venv/
+**/__pycache__/
+**/*.pyc
+
+# Databases & Instance details
+**/instance/
+**/*.db
+**/jansaarthi.db
+
+# IDE & System Files
+.idea/
+.vscode/
+.DS_Store
+.gemini/
+
+# Credentials / Environment files
+**/.env
+.env
