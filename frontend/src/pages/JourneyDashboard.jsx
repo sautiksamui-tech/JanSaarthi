@@ -8,6 +8,11 @@ import Badge from '../components/common/Badge';
 import Button from '../components/common/Button';
 import { Timeline, TimelineItem } from '../components/common/Timeline';
 
+const getApiUrl = (path) => {
+  const base = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' ? '' : 'http://localhost:5000';
+  return `${base}${path}`;
+};
+
 const JourneyDashboard = () => {
   const location = useLocation();
   const navigate = useNavigate();
@@ -34,11 +39,6 @@ const JourneyDashboard = () => {
     setChatInput("");
     setChatHistory(prev => [...prev, { sender: 'user', text: query }]);
     setChatLoading(true);
-
-    const getApiUrl = (path) => {
-      const base = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' ? '' : 'http://localhost:5000';
-      return `${base}${path}`;
-    };
 
     try {
       const response = await fetch(getApiUrl(`/api/journeys/${journeyId}/chat`), {
