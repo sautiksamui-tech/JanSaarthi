@@ -32,7 +32,7 @@ class LLMService:
         # Check keywords for better fallback targeting
         is_bakery_keywords = ["bakery", "bake", "cake", "bread", "patisserie", "confectionery", "oven"]
         has_bakery_kw = any(kw in goal_text.lower() for kw in is_bakery_keywords)
-        is_aadhar = any(kw in goal_text.lower() for kw in ["aadhar", "uidai", "aadhaar"])
+        is_aadhar = any(kw in goal_text.lower() for kw in ["aadhar", "uidai", "aadhaar", "name", "change", "update", "phone", "address", "gender", "photo", "dob", "birth"])
         is_medical = any(kw in goal_text.lower() for kw in ["pharmacy", "medical", "drug", "chemist", "medicine"])
         is_salon = any(kw in goal_text.lower() for kw in ["salon", "parlour", "spa", "hair", "beauty"])
 
